@@ -1,0 +1,27 @@
+swagger: "2.0"
+info:
+  version: "1.0"
+  title: CRUD API
+host: localhost:3000
+basePath: /
+schemes:
+  - http
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /list:
+    get:
+      description: Get all student in database
+      summary: Get all students
+      operationId: getStudent
+      parameters: []
+      responses:
+        "200":
+          description: "Get students successfully"
+          schema:
+            type: "array"
+            items:
+              type: "string"
+  

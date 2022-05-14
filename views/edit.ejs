@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css'><link rel="stylesheet" >
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+    <base href="http://localhost:3000" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Student</title>
+    <style>
+       body{
+  display: grid;
+  height: 100vh;
+  place-items: center;
+}
+
+.input1{
+  border: solid 1.5px #9e9e9e;
+ border-radius: 1rem;
+ background: rgba(0, 0, 0, 0.551);
+ padding: 1rem;
+ font-size: 1rem;
+ color: white;
+ transition: border 150ms cubic-bezier(0.4,0,0.2,1);
+ width: 300px;
+
+}
+.input2{
+  border: solid 1.5px #9e9e9e;
+ border-radius: 1rem;
+ background: none;
+ padding: 1rem;
+ font-size: 1rem;
+ color: white;
+ transition: border 150ms cubic-bezier(0.4,0,0.2,1);
+ width: 340px;
+
+}
+ 
+* {
+  margin: 0;
+  padding: 0;
+}
+a:hover, a:visited, a:link, a:active
+{
+    text-decoration: none;
+    color: white;
+}
+h3{
+    color: floralwhite;
+}
+.glow-on-hover {
+    width: 340px;
+    height: 58px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 1rem;
+}
+.glow-on-hover2 {
+    width: 340px;
+    height: 58px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 1rem;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #e20ebc, #cacdd1, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 1rem;
+}
+.glow-on-hover2:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #e20ebc, #cacdd1, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 1rem;
+}
+html { 
+  background: url("https://i.pinimg.com/originals/da/e3/6a/dae36a74337de05e249ce5afcec907c1.gif") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+
+.glow-on-hover:active {
+    color: #000
+}
+.glow-on-hover2active {
+    color: #000
+}
+.glow-on-hover:active:after {
+    background: transparent;
+}
+.glow-on-hover2:active:after {
+    background: transparent;
+}
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+.glow-on-hover2:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 1rem;
+}
+.glow-on-hover2:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 1rem;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+.image-input {
+  text-align: center;
+}
+.image-input input {
+  display: none;
+}
+.image-input label {
+  display: block;
+  color: #FFF;
+  background: rgba(0, 0, 0, 0.56);
+  padding: 0.3rem 0.6rem;
+  font-size: 185%;
+  cursor: pointer;
+  border-radius: 16px;
+  border: solid 1.5px #9e9e9e;
+  margin-bottom: 5px;
+}
+.image-input label i {
+  font-size: 125%;
+  margin-right: 0.3rem;
+}
+.image-input label:hover i {
+  animation: shake 0.35s;
+}
+.image-input img {
+
+  display: none;
+  border-radius: 50%
+}
+.image-input span {
+  display: none;
+  text-align: center;
+  cursor: pointer;
+}
+
+@keyframes shake {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(10deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(-10deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.change-image{
+    border: solid 1.5px #9e9e9e;
+ border-radius: 1rem;
+ background: none;
+ padding: 1rem;
+ font-size: 1rem;
+ color: white;
+ transition: border 150ms cubic-bezier(0.4,0,0.2,1);
+ width: 300px;
+
+}
+
+    </style>
+
+</head>
+<body>
+    <h3>EDIT STUDENT</h3>
+    <form action="./edit" method="post" enctype="multipart/form-data">
+        <input class="input1" type="hidden" name="IDChar" value="<%- nhanvat._id %>"/>
+        <input class="input1" type="text" name="textName" value="<%- nhanvat.Name %>" placeholder="Full name"/> <br/>
+        <input  class="input1" type="text" name="numberAge" value="<%- nhanvat.Age %>" placeholder="Age"/> <br/>
+        <input  class="input1" type="text" name="textClass" value="<%- nhanvat.Class %>" placeholder="Current class"/> <br/>
+        <input class="input1" type="text" name="textDate" value="<%- nhanvat.Date %>" placeholder="Date of brith"/> <br/>
+        <center><img src="upload/<%- nhanvat.Image %>" style="max-width: 175px;
+            border-radius: 50%;"/> <br/></center>
+       <div class="image-input">
+        <input type="file" accept="image/*" id="imageInput" name="imageStudent">
+        <label for="imageInput" class="image-button"><i class="far fa-image"></i> Choose image</label>
+        <center><img src="" class="image-preview"></center>
+        <span class="change-image">Choose different image</span>
+    </div><br>
+        <button class="glow-on-hover2" type="button" ><input  type="submit" name="imageStudent"  class="input2" value="Edit" >
+    </form>
+    <a href="./list"><button class="glow-on-hover" type="button" >List Student </button></a>
+    <script>$('#imageInput').on('change', function() {
+        $input = $(this);
+        if($input.val().length > 0) {
+            fileReader = new FileReader();
+            fileReader.onload = function (data) {
+            $('.image-preview').attr('src', data.target.result);
+            }
+            fileReader.readAsDataURL($input.prop('files')[0]);
+            $('.image-button').css('display', 'none');
+            $('.image-preview').css('display', 'block');
+            $('.change-image').css('display', 'block');
+        }
+    });
+                            
+    $('.change-image').on('click', function() {
+        $control = $(this);			
+        $('#imageInput').val('');	
+        $preview = $('.image-preview');
+        $preview.attr('src', '');
+        $preview.css('display', 'none');
+        $control.css('display', 'none');
+        $('.image-button').css('display', 'block');
+    });</script>
+</body>
+</html>
